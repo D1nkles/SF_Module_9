@@ -9,6 +9,9 @@
     {
         myDelegate myDel = Subtraction;
 
+        int result = myDel(15, 6);
+
+        Console.WriteLine(result);
         Console.WriteLine(myDel.Invoke(10, 4));
     }
 }

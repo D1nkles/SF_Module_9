@@ -15,6 +15,8 @@
     {
         MyDelegate myDel = Subtraction;
         myDel += Addition;
+        myDel -= Addition;
+
         myDel.Invoke(10, 4);
     }
 }

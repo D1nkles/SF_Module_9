@@ -1,14 +1,22 @@
 ﻿class Program 
 {
-    public delegate Car CovarTestDel();
-    public static Lexus CovarTest() 
+    public delegate Parent CovarTestDel();
+    public delegate void ContrvarTestDel(Child lexus);
+    public static Child CovarTest() 
     {
         return null;
+    }
+
+    public static void ContrvarTest(Parent car) 
+    {
+        Console.WriteLine("Контрвариантность работает!");
     }
     static void Main(string[] args) 
     {
         CovarTestDel covariancyDel = CovarTest;
+        ContrvarTestDel contrvariancyDel = ContrvarTest;
+        contrvariancyDel.Invoke(new Child());
     }
 }
-class Car { }
-class Lexus : Car { }
+class Parent { }
+class Child : Parent { }
